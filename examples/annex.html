@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Leaflet.timeline Example - Country Borders</title>
+    <title>Expansion of Cleveland's </title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
@@ -193,7 +193,7 @@ var annexations = {"type":"FeatureCollection","features":[{"type":"Feature","pro
 
       var osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
       var myLayer = L.tileLayer(tileUrl, {maxZoom: 22, attribution: osmAttrib});
-      var map = L.map('map', {layers: [myLayer], center: new L.LatLng(0,0), zoom: 2 });
+      var map = L.map('map', {layers: [myLayer], center: new L.LatLng(41.464856,-81.673737), zoom: 12 });
 
           var slider = L.timelineSliderControl({
         formatOutput: function(date){
