@@ -187,10 +187,13 @@ var annexations = {"type":"FeatureCollection","features":[{"type":"Feature","pro
         var blu = (hash >>  8) & 0xff;
         return 'rgb(' + red + ',' + grn + ',' + blu + ')';
       } 
-      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+
+      var tileUrl = 'https://api.mapbox.com/styles/v1/skorasaurus/cjnb0tf295imo2rk76qaosxi4/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2tvcmFzYXVydXMiLCJhIjoiaEdGTUZWTSJ9.osOC8tWU3bMaNprVNoEu7g'; 
+      // var tileUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+
       var osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-      var osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
-      var map = L.map('map', {layers: [osm], center: new L.LatLng(0,0), zoom: 2 });
+      var myLayer = L.tileLayer(tileUrl, {maxZoom: 22, attribution: osmAttrib});
+      var map = L.map('map', {layers: [myLayer], center: new L.LatLng(0,0), zoom: 2 });
 
           var slider = L.timelineSliderControl({
         formatOutput: function(date){
