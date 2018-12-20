@@ -1,6 +1,7 @@
-<html>
+<html lang="en">
   <head>
-    <title>Expansion of Cleveland's </title>
+     <meta charset="utf-8">
+    <title>Expansion of Cleveland's land Through Annexation </title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" />
@@ -14,7 +15,7 @@
       }
       #map{
         width: 100vw;
-        height: 100vh;
+        height: 90vh;
       }
       .leaflet-bottom.leaflet-left{
         width: 100%;
@@ -28,7 +29,9 @@
     </style>
   </head>
   <body>
-    test 52
+<h1> Cleveland's annexation growth</h1>
+ <p> Cleveland's population growth in the 19th and 20th centuries came not only from people moving to the city but 
+  also the size of land that is known as Cleveland grew.</p>
     <div id="map"></div>
 
     <script>
@@ -48,14 +51,12 @@ var annexations = {"type":"FeatureCollection","features":[{"type":"Feature","pro
           var slider = L.timelineSliderControl({
         formatOutput: function(date){
           return moment(date).format("YYYY-MM-DD");
-
         }
+
       });
       map.addControl(slider);
 
       var polygonTimeline = L.timeline(annexations);
-
-      onclick(annexations.properties['popInfo'])
 
       // var polygonTimeline = L.timeline(polygons, {
       //     // start : moment(from).add(1000, "y").toDate().getTime(),
