@@ -48,11 +48,11 @@ var annexations = {"type":"FeatureCollection","features":[{"type":"Feature","pro
       var myLayer = L.tileLayer(tileUrl, {maxZoom: 22, attribution: osmAttrib});
       var map = L.map('map', {layers: [myLayer], center: new L.LatLng(41.464856,-81.673737), zoom: 12 });
 
-          var slider = L.timelineSliderControl({
+      var slider = L.timelineSliderControl({
         formatOutput: function(date){
           return moment(date).format("YYYY-MM-DD");
-        }
-
+        },
+        end: new Date ("1930-03-31").getTime()
       });
       map.addControl(slider);
 
